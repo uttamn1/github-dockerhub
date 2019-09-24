@@ -1,0 +1,10 @@
+node
+{
+checkout scm
+docker.withRegistry('https://registry.hub.docker.com','dockerhub')
+{
+def customImage=docker.build("java/javawebapp")
+/*Push the container to the custom Registry */
+customimage.push()
+}
+}
